@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Форма заполнения заявки</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background: #f0f8ff;">
+<style>
+.my_boks-2 {
+	margin: 40px 650px;
+	padding: 20px 20px;
+	color: #532;
+	background: #fff;
+	text-align: left;
+	display: block;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+</style>
+<div class="my_boks-2">
+    <form method="post" action="main">
+        <h2>Заполните карточку заявки</h2>
+        <h4>Личные данные</h4>
+        <div>
+            <input type="text" name="tname" placeholder="Введите Имя" required />
+            <input type="text" name="phone" placeholder="Введите Телефон" required/>
+        </div><p></p>
+        <h4>Маршрут</h4>
+        <div>
+            <input type="text" name="ad_from" placeholder="От куда" required/>
+            <input type="text" name="ad_to" placeholder="Куда" required/>
+        </div><p></p>
+        <h4>Дата грузоперевозки</h4>
+        <div><input type="datetime-local" name="dates" placeholder="Дата" required/></div><p></p>
+        <h4>Характеристики груза</h4>
+        <div>
+        <input type="number" name="tonnzh" placeholder="Тоннаж" required/>
+            <span>Тип груза: </span>
+        <select name="tip" required>
+            {{#tipg}}
+            <option value={{id}}>{{tip}}</option>
+            {{/tipg}}
+        </select></div><p></p>
+        <div><button type="submit">Отправить</button></div>
+    </form>
+</div>
+</body>
+</html>
